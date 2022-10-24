@@ -4,8 +4,41 @@
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
 
+int porcentagem(int medida, int min, int max){
+    int valor;
+    valor = (medida-min)*100 / (max-min);
+    return valor;
+}
+
+int main () {
+    int medida;
+    int min;
+    int max;
+    std::cout << "Valor medida: ";
+    std::cin >> medida;
+    std::cout << "Valor minimo: ";
+    std::cin >> min;
+    std::cout << "Valor maximo: ";
+    std::cin >> max;
+    std::cout << "Valor final: " << porcentagem(medida, min, max) << std::endl;
+    return 0;
+}
+
 // 2 - Faça uma função que simule a leitura de um sensor lendo o 
 // valor do teclado ao final a função retorna este valor
+
+int sensor(){
+    int valor;
+    std::cout << "Valor do sensor: ";
+    std::cin >> valor;
+    return valor;
+}
+int main2(){
+    int valor;
+    valor = sensor();
+    std::cout << "Valor do sensor: " << valor << std::endl;
+    return 0;
+}
 
 // 3 - Faça uma função que armazena uma medida inteira qualquer 
 // em um vetor fornecido. Note que como C não possui vetores 
@@ -15,6 +48,27 @@
 // uma área de memória fora do vetor
 
 
+int metrica(int v*, int maiorv, int posicao, int medida){
+    if(posicao < maiorv){
+        v[posicao] = medida;
+        return posicao++;
+    }
+    return posicao;
+}
+int main3(){
+    int vetormax = 10;
+    int vetorMov[vetormax];
+    int atualvetor;
+    int medida;
+    std::cout << "Valor medida: ";
+    std::cin >> medida;
+    atualvetor = int metrica(vetorMov, vetormax, atualvetor, medida);
+    std::cout << "Posicao atual do vetor: " << atualvetor << std::endl;
+    return 0;
+    
+}
+
+
 
 // 4 - Faça uma função que recebe um vetor com 4 posições que contém 
 // o valor da distância de um pequeno robô até cada um dos seus 4 lados.
@@ -22,11 +76,30 @@
 // de maior distância ("Direita", "Esquerda", "Frente", "Tras") e a 
 // segunda é esta maior distância.
 
-
+não consegui.
 
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e 
 // retorna verdadeiro ou falso
+
+
+bool mapear(){
+    char resp;
+    std::cout << "Deseja continuar o mapeamento? (sim/não): ";
+    std::cin >> resp;
+    if(resp == 'sim'){
+        return true;
+    else return false;
+}
+int main5(){
+    bool segue = mapear();
+    if(segue){
+        std::cout << "Continua a mapear" << std::endl;
+    }else{
+        std::cout << "Nao continua a mapear" << std::endl;
+    }
+    return 0;
+}
 
 
 // 6 - A função abaixo (que está incompleta) vai "dirigindo" virtualmente um robô 
